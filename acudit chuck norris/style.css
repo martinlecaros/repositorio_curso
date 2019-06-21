@@ -1,0 +1,14 @@
+body {text-align: center;margin: 0px;}
+img {width: 100%;float: left;}
+h1 {font-size: 2em;text-decoration: underline;}
+#acudit {padding: 15px;color: black;}
+p {font-size: 3em;}
+div {
+    position: absolute;
+    top: 5px;
+    z-index: 10;
+    width: 70%;
+    left: 15%;
+    right: 15%;
+    background-color: rgba(217, 237, 21, 0.5);
+}

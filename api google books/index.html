@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>acudit</title>
+  <link rel="stylesheet" href="style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+    crossorigin="anonymous"></script>
+
+  <script>
+    $("document").ready(function() {
+    	$("#btn").click(getJSONData);
+
+            function getJSONData() {
+                var googleAPI = "https://www.googleapis.com/books/v1/volumes?q=search+terms";
+                key = "";
+                $.getJSON(googleAPI, function(result,status,xhr) {
+                    if (xhr.status===200) {
+                        var object = xhr.responseJSON.items;
+                        
+
+                        console.log(object.length);
+
+                        // for (var i=0; i<object.length; i++) {
+                        //     console.log(object[i].volumeInfo.authors[i]);
+                        // }
+                        
+
+
+                        //$(object).each(function(index, object) { });
+                            
+                        
+
+                        //$("#author").append(xhr.responseJSON.items[0].volumeInfo.authors[0]);
+                        //$("#title").append(xhr.responseJSON.items[0].volumeInfo.title);
+                        //$("#description").append(xhr.responseJSON.items[0].volumeInfo.description);
+                        
+                    } else {
+                        $("#googleAPI").html("Oops. Something isn't working");
+                        console.log(xhr);
+                    }
+                });
+            };
+    });
+  </script>
+</head>
+<body>
+    <div>
+        <div>
+            <button id="btn">Load google api books</button>
+            <p>Autor: <span id="author"></span></p>
+            <p>Nombre: <span id="title"></span></p>
+            <p>Descripción: <span id="description"></span></p>
+        </div>
+    </div>
+</body>

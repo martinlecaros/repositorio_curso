@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+  <head>
+    <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Exercici Lletres Repetides FASE 2</title>
+  <meta name="author" content="name">
+  <meta name="description" content="description here">
+  <meta name="keywords" content="keywords,here">
+  <script>
+   /*FASE 2: Canvia la taula per una llista (List<Character>)
+    Al bucle, si la lletra és una vocal imprimeix a la consola: 
+    ‘He trobat la VOCAL: __’. Sinó, imprimeix: ‘He trobat la CONSONTANT: __’.
+    Si trobes un numero, mostra per pantalla: ‘Els noms de persones no contenen 
+    el número: __’.*/
+    
+    const nom = ['m', 'a', 'r', 't', 'i', 'n', '4', 'A', 'n', 'd', 'r', 'e', 's'];
+
+    console.log("Partim del nom " + nom.join(""));
+
+    nom.forEach(   
+      function(element) { 
+        if (element.match(/[aeiou]/gi)) {
+          console.log("He trobat la VOCAL: " + element);
+        } else if (element.match(/[^aeiou\d.()=¿?¡! ,.;:\¨\/&]/gi)) {
+          console.log("He trobat la CONSONTANT: " + element);
+        } else if (element.match(/\d/)) {
+          console.log("Els noms de persones no contenen el número: " + element);
+        } else {
+          console.log("Unknown: " + element);
+        };
+
+      }
+    );
+
+  </script> 
+  </head>
+  <body>
+  </body>
+</html>

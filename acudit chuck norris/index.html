@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>acudit</title>
+  <link rel="stylesheet" href="style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+    crossorigin="anonymous"></script>
+
+  <script>
+    $("document").ready(function() {
+        $("#thebtn").click(getJSONData);
+
+            function getJSONData() {
+                var acuditAPI = "http://api.icndb.com/jokes/random";
+                $.getJSON(acuditAPI, function(result,status,xhr) {
+                    if (xhr.status===200) {
+                        $("#acudit").html(xhr.responseJSON.value.joke);
+                        //$("#acudit").css("background-color", "black");
+                        console.log(result);
+                        console.log(xhr);
+                    } else {
+                        $("#acudit").html("Oops. Something isn't working");
+                        console.log(xhr);
+                    }
+                });
+            };
+    });
+  </script>
+
+</head>
+<body>
+    <img src="https://www.jacamo.co.uk/blog/wp-content/uploads/2016/03/169271-chuck-norris-texas-banner_6cc9.jpg?x62969" alt="chuck"/>
+    <div>
+        <div>
+            <h1>Chuck Norris is a hero</h1>
+            <button id="thebtn">check for the new chuck joke</button>
+            <p id="acudit"></p>
+        </div>
+    </div>
+</body>

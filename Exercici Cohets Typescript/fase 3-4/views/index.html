@@ -1,0 +1,45 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Rockets</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <link rel="stylesheet" href="styles/styles.css">
+</head>
+<body>
+<div class="container-fluid">
+
+    <div id="bloque1" class="row mt-4">
+        <div class="columna1 text col-lg-5 text-center">
+            <button type="button" class="btn btn-sm" id="cohete1" data-type="cohete1">Create Rocket 1</button>
+            <button type="button" class="btn btn-sm" id="printcohete1" data-type="printcohete1">Print Rocket 1</button>    
+            <div id="img-cohete1" class="my-3"></div>
+            <div id="content-cohete1"></div>
+            <div id="velocidad-cohete1" class="mt-4"></div>
+            <div id= "acdcbotones1" class="my-4"></div>
+            <div id="comentario-cohete1"></div>
+        </div>
+
+        <div class="columna2 text col-lg-2 text-center my-5">
+            <button type="button" class="btn btn-sm" id="printallcohete" data-type="printallcohete">Print All Rockets</button>
+        </div>
+
+        <div class="columna3 text col-lg-5 text-center">
+            <button type="button" class="btn btn-sm" id="cohete2" data-type="cohete2">Create Rocket 2</button>
+            <button type="button" class="btn btn-sm" id="printcohete2" data-type="printcohete2">Print Rocket 2</button>    
+            <div id="img-cohete2" class="my-3"></div>
+            <div id="content-cohete2"></div>
+            <div id="velocidad-cohete2" class="mt-4"></div>
+            <div id= "acdcbotones2" class="my-4"></div>
+            <div id="comentario-cohete2"></div>
+        </div>
+    </div>
+
+</div>
+    <script src="../models/cohetes.js"></script>
+    <script src="../controllers/controller.js"></script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+cohete1boton.propiedades = {
+    codigo: "32WESSDS",
+    propulsores: 3,
+    potencia: [10,30,80]
+};
+
+cohete2boton.propiedades = {
+    codigo: "LDSFJA32",
+    propulsores: 6,
+    potencia: [30,40,50,50,30,10]
+};
+
+
+// let cohete1 = new CoheteFactory(type1);
+    // let cohete2 = new CoheteFactory(type2);
+    // let codigo = evento.target.propiedades.codigo;
+    // let propulsores = evento.target.propiedades.propulsores;
+    // let potencia = evento.target.propiedades.potencia;
+    
+    
+
+    // evento.target.removeEventListener("click", (cohete) => {
+    //     return console.log(cohete);
+    // }, false);
+
+    // output.setAttribute("class", "rockets");

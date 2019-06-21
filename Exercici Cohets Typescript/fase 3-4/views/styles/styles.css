@@ -1,0 +1,55 @@
+@import url('https://fonts.googleapis.com/css?family=B612+Mono:400,400i,700,700i&display=swap');
+body {
+    background-image: url("../img/back.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center bottom;
+    background-size: cover; 
+}
+.text {
+    font-family: 'B612 Mono', monospace;
+    font-size: 18px;
+    color: #4a39e9;;
+    font-weight: 400;
+}
+#bloque1 { height: 100%; }
+.btn { background-color: #4a39e9; border: none; color: white; outline: none !important; box-shadow: none;}
+.btn:hover { background-color: rgb(211, 58, 58); border: none; color: white; outline: none !important; box-shadow: none;}
+.btn:focus {outline: none !important; box-shadow: none;}
+.btn[disabled] {
+color: #fff;
+background-color: rgb(211, 58, 58);
+border: none;
+outline: none !important;
+opacity: .25;
+text-decoration: line-through;
+outline: none !important;
+box-shadow: none;
+}
+button#printallcohete {
+    height: 120px;
+    width: 120px;
+    border-radius: 50%;
+    background-color: rgb(211, 58, 58);
+    color: white;
+    outline: none !important;
+    box-shadow: none;
+}
+button#printallcohete:hover {
+    background-color: #4a39e9;
+    color: white;
+    outline: none !important;
+    box-shadow: none;
+}
+.btnacdc {
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+}
+#velocidad-cohete1, #velocidad-cohete2 {
+    font-weight: 700;
+}
+#comentario-cohete1, #comentario-cohete2 {
+    color: rgb(211, 58, 58);
+    font-weight: 700;
+}

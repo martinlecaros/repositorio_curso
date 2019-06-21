@@ -1,0 +1,31 @@
+button {
+  background: none;
+  border: none;
+}
+.rating {
+  text-align: center;
+  margin-top: 30px;
+  
+  /* direction: rtl; */
+}
+
+.corazon {
+  color: #fca6e9;
+  cursor: pointer;
+}
+
+.corazonselected {
+  color: #ff2121;
+}
+
+/*
+.far:hover {
+   color: #ff2121;
+}  */
+
+
+
+/* .rating button i:before,
+.rating button:hover ~ button:before {
+   color: #ff2121;
+} */

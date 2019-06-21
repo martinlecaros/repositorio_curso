@@ -1,0 +1,12 @@
+.rating {
+  text-align: center;
+  margin-top: 30px;
+  direction: rtl;
+}
+.rating > button > i {
+  color: #fca6e9;
+}
+.rating > button > i:hover:before,
+.rating > button > i:hover ~ i:before {
+   color: #ff2121;
+}

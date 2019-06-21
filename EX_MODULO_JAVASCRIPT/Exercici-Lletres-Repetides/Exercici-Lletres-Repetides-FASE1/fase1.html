@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+  <head>
+    <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Exercici Lletres Repetides FASE 1</title>
+  <meta name="author" content="name">
+  <meta name="description" content="description here">
+  <meta name="keywords" content="keywords,here">
+  <script>
+    //FASE 1
+    //Crea un llistat amb el teu nom on cada posició correspongui a una lletra.
+    //Fes un bucle que recorri aquesta taula i mostri per consola cadascuna de les lletres.
+    
+    var nom = ['M','A','R','T','I','N'];
+    function nomLletra() {
+      for (let i = 0; i<nom.length; i++) {
+        console.log(nom[i]);
+      }
+    }
+    nomLletra(nom);
+
+    // Esta fn hace lo mismo que la anterior pero tomando un string como arg.
+    /*
+    
+    (function(nom){
+      for (let i = 0; i<nom.length; i++) {
+        console.log(nom.charAt(i));
+      }
+    })("Martin-Andres");
+    
+    */
+
+  </script> 
+  </head>
+  <body>
+  </body>
+</html>

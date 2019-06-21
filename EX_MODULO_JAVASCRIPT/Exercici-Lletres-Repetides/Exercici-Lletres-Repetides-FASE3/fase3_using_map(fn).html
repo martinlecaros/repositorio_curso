@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+  <head>
+    <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Exercici Lletres Repetides FASE 3</title>
+  <meta name="author" content="name">
+  <meta name="description" content="description here">
+  <meta name="keywords" content="keywords,here">
+  <script>
+
+    /*FASE 3 Emmagatzemar en un Map tant les lletres de la llista com el nombre 
+    de vegades que apareixen*/
+    var nom = ['m', 'a', 'r', 't', 'i', 'n', 'a', 'n', 'd', 'r', 'e', 's'];
+    var object = new Object;
+
+    object = nom.map(function(letra) {
+        var contador = 0;
+        
+        for(var j = 0; j<nom.length; j++) {
+          if (letra === nom[j]) {
+            contador += 1;
+            put(letra, contador, object);
+          }
+
+          function put(letra, contador, object) {
+            return object[letra]=contador;
+          }
+        }
+
+        return object;
+       
+       });
+    console.log (object[0]);
+
+  </script> 
+  </head>
+  <body>
+  </body>
+</html>

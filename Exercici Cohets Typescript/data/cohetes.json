@@ -1,0 +1,14 @@
+{
+    "cohetes": [
+      {
+        "codigo" : "32WESSDS",
+        "propulsores" : 3,
+        "potencia" : "[10,30,80]"
+      },
+      {
+        "codigo" : "LDSFJA32",
+        "propulsores" : 6,
+        "potencia" : "[30,40,50,50,30,10]"
+      }
+    ]
+  }
