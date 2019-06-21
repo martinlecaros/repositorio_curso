@@ -20,8 +20,6 @@ window.addEventListener('load', () => {
     agregarCoheteAlSelector(); 
     nuevoPropulsorModal();
     cargarListaPropulsores();
-    document.querySelector("#ac_cohete").addEventListener("click", acelerarCohete, false);
-    document.querySelector("#de_cohete").addEventListener("click", frenarCohete, false);
 });
 
 ////Cargar cohete contenedor.
@@ -47,12 +45,16 @@ function cargarCoheteUnidad() {
 
     for (let i = 0; i < cohete.length; i++) {
         listaCohete +=
-            `<li class="list-group-item">
+            `<li class="list-group-item mb-2">
             <p>El cohete ${cohete[i].codigo} tiene ${cohete[i].numeropropulsores} propulsores:</p>
-                ${listaPropulsores(cohete[i])}
-                <span class="velocidad_id">
-                Velocidad actual: ${cohete[i].velocidadActual()}
-                </span></li>`;
+            ${listaPropulsores(cohete[i])}
+            <br><span class="text_little velocidad">Velocidad actual: ${cohete[i].velocidadActual()}</span>
+            <button type="button" class="btnacdc btn btn-sm" id="ac_cohete${cohete[i].codigo}">+</button><span class="ml-2">Acelerar</span>
+            <button type="button" class="btnacdc btn btn-sm" id="de_cohete${cohete[i].codigo}">-</button><span class="ml-2">Frenar</span></li>
+            `;        
+        document.querySelector("#ac_cohete" + cohete[i].codigo).addEventListener("click", acelerarCohete, false);
+        document.querySelector("#de_cohete" + cohete[i].codigo).addEventListener("click", frenarCohete, false);
+
     }
     return listaCohete;
 }
@@ -62,7 +64,7 @@ function listaPropulsores(cohete) {
     let listaPropulsores: string = "";
     for (let i = 0; i < cohete.propulsores.length; i++) {
         listaPropulsores += `
-        <p class="text">Velocidad actual: ${cohete.propulsores[i].velocidadActual} - Velocidad máxima: ${cohete.propulsores[i].velocidadMaxima}</p>
+        <p class="text_little propulsor mr-3">P(${i+1}) ${cohete.propulsores[i].velocidadActual}-<span class="text-danger">${cohete.propulsores[i].velocidadMaxima}</span></p>
         `;
     }
     return listaPropulsores;

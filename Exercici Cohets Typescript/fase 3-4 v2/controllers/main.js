@@ -19,8 +19,6 @@ window.addEventListener('load', function () {
     agregarCoheteAlSelector();
     nuevoPropulsorModal();
     cargarListaPropulsores();
-    document.querySelector("#ac_cohete").addEventListener("click", acelerarCohete, false);
-    document.querySelector("#de_cohete").addEventListener("click", frenarCohete, false);
 });
 ////Cargar cohete contenedor.
 function cargarCohetes() {
@@ -42,7 +40,9 @@ function cargarCoheteUnidad() {
     var listaCohete = "";
     for (var i = 0; i < cohete.length; i++) {
         listaCohete +=
-            "<li class=\"list-group-item\">\n            <p>El cohete " + cohete[i].codigo + " tiene " + cohete[i].numeropropulsores + " propulsores:</p>\n                " + listaPropulsores(cohete[i]) + "\n                <span class=\"velocidad_id\">\n                Velocidad actual: " + cohete[i].velocidadActual() + "\n                </span></li>";
+            "<li class=\"list-group-item mb-2\">\n            <p>El cohete " + cohete[i].codigo + " tiene " + cohete[i].numeropropulsores + " propulsores:</p>\n            " + listaPropulsores(cohete[i]) + "\n            <br><span class=\"text_little velocidad\">Velocidad actual: " + cohete[i].velocidadActual() + "</span>\n            <button type=\"button\" class=\"btnacdc btn btn-sm\" id=\"ac_cohete" + cohete[i].codigo + "\">+</button><span class=\"ml-2\">Acelerar</span>\n            <button type=\"button\" class=\"btnacdc btn btn-sm\" id=\"de_cohete" + cohete[i].codigo + "\">-</button><span class=\"ml-2\">Frenar</span></li>\n            ";
+        document.querySelector("#ac_cohete" + cohete[i].codigo).addEventListener("click", acelerarCohete, false);
+        document.querySelector("#de_cohete" + cohete[i].codigo).addEventListener("click", frenarCohete, false);
     }
     return listaCohete;
 }
@@ -50,7 +50,7 @@ function cargarCoheteUnidad() {
 function listaPropulsores(cohete) {
     var listaPropulsores = "";
     for (var i = 0; i < cohete.propulsores.length; i++) {
-        listaPropulsores += "\n        <p class=\"text\">Velocidad actual: " + cohete.propulsores[i].velocidadActual + " - Velocidad m\u00E1xima: " + cohete.propulsores[i].velocidadMaxima + "</p>\n        ";
+        listaPropulsores += "\n        <p class=\"text_little propulsor mr-3\">P(" + (i + 1) + ") " + cohete.propulsores[i].velocidadActual + "-<span class=\"text-danger\">" + cohete.propulsores[i].velocidadMaxima + "</span></p>\n        ";
     }
     return listaPropulsores;
 }
