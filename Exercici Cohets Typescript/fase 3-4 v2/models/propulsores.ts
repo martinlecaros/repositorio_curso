@@ -12,7 +12,6 @@ class Propulsores {
         this.velocidadActual += valor;
         if(this.velocidadActual > this.velocidadMaxima) {
             this.velocidadActual = this.velocidadMaxima;
-            alert(`El propulsor está en su máxima potencia: ${this.velocidadMaxima}`);
         }
     }
 
@@ -20,7 +19,6 @@ class Propulsores {
         this.velocidadActual -= valor;
         if(this.velocidadActual < 0) {
             this.velocidadActual = 0;
-            alert(`El propulsor está detenido a: ${this.velocidadActual}`);
         }
     }
 }

@@ -10,6 +10,7 @@
     <script src="../models/addpropulsores.js"></script>
 <!-- controladores -->
     <script src="../controllers/main.js"></script>
+    <script src="../controllers/populate.js"></script>
 <!-- vistas -->
     <link rel="stylesheet" type="text/css" media="screen" href="styles/bootstrap.min.css">
     <script src="scripts/jquery-3.4.1.min.js"></script>
@@ -37,7 +38,7 @@
   <div class="modal-dialog modal-lg" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">COHETE NUEVO</h5>
+        <h5 class="modal-title font-weight-bold" id="exampleModalLabel">COHETE NUEVO</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -45,8 +46,8 @@
       <div class="modal-body">
         <form>
           <div class="form-group">
-            <label for="recipient-name" class="col-form-label">Id cohete:</label>
-            <input type="text" class="form-control" id="id_cohete" placeholder="Introduce ID (mínimo 8 letras)" required min="8">
+            <label for="recipient-name" class="col-form-label font-weight-bold">Id cohete:</label>
+            <input type="text" maxlength="8" class="form-control" id="id_cohete" placeholder="Introduce ID (mínimo 8 letras)" required min="8">
           </div>
           <ul id="lista_propulsores_modal">
           <!-- content propulsores -->

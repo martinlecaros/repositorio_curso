@@ -1,0 +1,11 @@
+cohete[0] = new Cohete("32WESSDS");
+cohete[0].agregarPropulsor(`prop1_${cohete[0].codigo}`, 10);
+cohete[0].agregarPropulsor(`prop2_${cohete[0].codigo}`, 30);
+cohete[0].agregarPropulsor(`prop3_${cohete[0].codigo}`, 80);
+cohete[1] = new Cohete("LDSFJA32");
+cohete[1].agregarPropulsor(`prop1_${cohete[1].codigo}`, 30);
+cohete[1].agregarPropulsor(`prop2_${cohete[1].codigo}`, 40);
+cohete[1].agregarPropulsor(`prop3_${cohete[1].codigo}`, 50);
+cohete[1].agregarPropulsor(`prop4_${cohete[1].codigo}`, 50);
+cohete[1].agregarPropulsor(`prop5_${cohete[1].codigo}`, 30);
+cohete[1].agregarPropulsor(`prop6_${cohete[1].codigo}`, 10);

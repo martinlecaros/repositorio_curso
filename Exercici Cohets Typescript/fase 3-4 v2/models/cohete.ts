@@ -1,22 +1,11 @@
 class Cohete {
     codigo: string;
-    codigoValidado: string;
     numeropropulsores: number;
     propulsores: Propulsores[] = [];
     
     constructor(codigo: string){
         this.codigo = codigo;
-        this.validarCodigo(codigo);
-        this.codigoValidado = this.validarCodigo(codigo);
         this.numeropropulsores = 0;
-    }
-
-    validarCodigo(id: string) {
-        if(id.length>=8) {
-            return id;
-        } else {
-            throw new Error(`Ingresa mínimo 8 dígitos. id: ${id} es menor.`);
-        }
     }
 
     acelerarCohete(valor: number) {
@@ -40,9 +29,9 @@ class Cohete {
     
     velocidadActual() {
         let velocidad = 0;
-        for (let i = 0; i < this.propulsores.length; i++) {
-            velocidad += this.propulsores[i].velocidadActual;
-        }
+        this.propulsores.forEach(element => {
+            velocidad += element.velocidadActual;
+        });
         return velocidad; 
     }
     
