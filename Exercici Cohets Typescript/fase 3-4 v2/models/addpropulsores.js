@@ -1,6 +1,7 @@
-var AddPropulsores = /** @class */ (function () {
+"use strict";
+var AddPropulsores = (function () {
     function AddPropulsores(id_propulsor, contenido) {
-        this.potencia_inicial = 10;
+        this.potencia_inicial = 0;
         this.id_propulsor = id_propulsor;
         this.contenido = contenido;
     }

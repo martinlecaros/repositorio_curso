@@ -1,4 +1,5 @@
-var Cohete = /** @class */ (function () {
+"use strict";
+var Cohete = (function () {
     function Cohete(codigo) {
         this.propulsores = [];
         this.codigo = codigo;
@@ -13,17 +14,6 @@ var Cohete = /** @class */ (function () {
         else {
             throw new Error("Ingresa m\u00EDnimo 8 d\u00EDgitos. id: " + id + " es menor.");
         }
-    };
-    Cohete.prototype.velocidadActual = function () {
-        var velocidad = 0;
-        for (var i = 0; i < this.propulsores.length; i++) {
-            velocidad += this.propulsores[i].velocidadActual;
-        }
-        return velocidad;
-    };
-    Cohete.prototype.agregarPropulsor = function (codigoPropulsor, velocidadMaximaPropulsor) {
-        this.propulsores.push(new Propulsores(codigoPropulsor, velocidadMaximaPropulsor));
-        ++this.numeropropulsores;
     };
     Cohete.prototype.acelerarCohete = function (valor) {
         for (var i = 0; i < this.propulsores.length; i++) {
@@ -40,6 +30,17 @@ var Cohete = /** @class */ (function () {
                 i = -10;
             }
         }
+    };
+    Cohete.prototype.velocidadActual = function () {
+        var velocidad = 0;
+        for (var i = 0; i < this.propulsores.length; i++) {
+            velocidad += this.propulsores[i].velocidadActual;
+        }
+        return velocidad;
+    };
+    Cohete.prototype.agregarPropulsor = function (codigoPropulsor, velocidadMaximaPropulsor) {
+        this.propulsores.push(new Propulsores(codigoPropulsor, velocidadMaximaPropulsor));
+        ++this.numeropropulsores;
     };
     return Cohete;
 }());

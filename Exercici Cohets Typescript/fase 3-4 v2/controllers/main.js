@@ -1,4 +1,6 @@
+"use strict";
 var cohete = [];
+var arrayPropulsores = [];
 cohete[0] = new Cohete("32WESSDS");
 cohete[0].agregarPropulsor("P1_" + cohete[0].codigo, 10);
 cohete[0].agregarPropulsor("P2_" + cohete[0].codigo, 30);
@@ -10,150 +12,126 @@ cohete[1].agregarPropulsor("P3_" + cohete[1].codigo, 50);
 cohete[1].agregarPropulsor("P4_" + cohete[1].codigo, 50);
 cohete[1].agregarPropulsor("P5_" + cohete[1].codigo, 30);
 cohete[1].agregarPropulsor("P6_" + cohete[1].codigo, 10);
-cohete[2] = new Cohete("ADSFJA32");
-cohete[2].agregarPropulsor("P1_" + cohete[2].codigo, 50);
-cohete[2].agregarPropulsor("P2_" + cohete[2].codigo, 60);
-cohete[2].agregarPropulsor("P3_" + cohete[2].codigo, 30);
 window.addEventListener('load', function () {
     cargarCohetes();
-    agregarCoheteAlSelector();
     nuevoPropulsorModal();
     cargarListaPropulsores();
 });
-////Cargar cohete contenedor.
 function cargarCohetes() {
     var contenedorCohetes = document.querySelector("#contenedor_cohetes");
     var coheteUnidad = document.createElement("ul");
-    coheteUnidad.id = "rocket_list";
+    coheteUnidad.id = "lista_cohete";
     coheteUnidad.className = "list-group";
     coheteUnidad.innerHTML = cargarCoheteUnidad();
     if (contenedorCohetes.hasChildNodes()) {
-        var ulCohete = document.getElementById("rocket_list");
+        var ulCohete = document.getElementById("lista_cohete");
         contenedorCohetes.replaceChild(coheteUnidad, ulCohete);
     }
     else {
         contenedorCohetes.appendChild(coheteUnidad);
     }
 }
-////Cargar cohete unid.
 function cargarCoheteUnidad() {
     var listaCohete = "";
-    for (var i = 0; i < cohete.length; i++) {
+    cohete.forEach(function (element) {
         listaCohete +=
-            "<li class=\"list-group-item mb-2\">\n            <p>El cohete " + cohete[i].codigo + " tiene " + cohete[i].numeropropulsores + " propulsores:</p>\n            " + listaPropulsores(cohete[i]) + "\n            <br><span class=\"text_little velocidad\">Velocidad actual: " + cohete[i].velocidadActual() + "</span>\n            <button type=\"button\" class=\"btnacdc btn btn-sm\" id=\"ac_cohete" + cohete[i].codigo + "\">+</button><span class=\"ml-2\">Acelerar</span>\n            <button type=\"button\" class=\"btnacdc btn btn-sm\" id=\"de_cohete" + cohete[i].codigo + "\">-</button><span class=\"ml-2\">Frenar</span></li>\n            ";
-        document.querySelector("#ac_cohete" + cohete[i].codigo).addEventListener("click", acelerarCohete, false);
-        document.querySelector("#de_cohete" + cohete[i].codigo).addEventListener("click", frenarCohete, false);
-    }
+            "<li class=\"list-group-item bg-light text-dark mb-2 p-4\">\n            <p>El cohete " + element.codigo + " tiene " + element.numeropropulsores + " propulsores:</p>\n            " + listaPropulsores(element) + " <span class=\"bpropulsores text-dark rounded p-2\">Velocidad actual: " + element.velocidadActual() + "</span>\n            <div class=\"mt-4\">\n            <button type=\"button\" class=\"btn btn-success mr-2\" id=\"ac_cohete" + element.codigo + "\" data-codigo=\"" + element.codigo + "\" onclick=\"acelerarCohete(this)\">Acelerar</button>\n            <button type=\"button\" class=\"btn btn-danger\" id=\"de_cohete" + element.codigo + "\" data-codigo=\"" + element.codigo + "\" onclick=\"frenarCohete(this)\">Frenar</button></li></div>";
+    });
     return listaCohete;
 }
-//<span class="badge badge-pill badge-primary">
 function listaPropulsores(cohete) {
     var listaPropulsores = "";
-    for (var i = 0; i < cohete.propulsores.length; i++) {
-        listaPropulsores += "\n        <p class=\"text_little propulsor mr-3\">P(" + (i + 1) + ") " + cohete.propulsores[i].velocidadActual + "-<span class=\"text-danger\">" + cohete.propulsores[i].velocidadMaxima + "</span></p>\n        ";
-    }
+    cohete.propulsores.forEach(function (element) {
+        listaPropulsores += "<p class=\"d-inline mr-3\"><span class=\"bpropulsores  text-dark rounded p-2\">" + element.velocidadActual + "-" + element.velocidadMaxima + "</span></p>";
+    });
     return listaPropulsores;
 }
-//<p class="badge badge-pill badge-dark">
-function agregarCoheteAlSelector() {
-    var selectorCohete = document.querySelector("#selectorCohete");
-    // while (selectorCohete.firstChild) {
-    //     selectorCohete.removeChild(selectorCohete.firstChild);
-    // }
-    for (var i = 0; i < cohete.length; i++) {
-        var selectorOption = document.createElement("option");
-        selectorOption.value = cohete[i].codigo;
-        selectorOption.innerHTML = cohete[i].codigo;
-        selectorCohete.appendChild(selectorOption);
-    }
-}
-//Acelerar, frenar cohete
-function acelerarCohete() {
+function acelerarCohete(evt) {
+    var optionSelected = evt.dataset.codigo;
     var valorAcelerar = 10;
-    var optionSelected = document.getElementById("selectorCohete").value;
-    for (var i = 0; i < cohete.length; i++) {
-        if (cohete[i].codigo == optionSelected) {
-            cohete[i].acelerarCohete(valorAcelerar);
+    cohete.forEach(function (element) {
+        if (element.codigo == optionSelected) {
+            element.acelerarCohete(valorAcelerar);
             cargarCohetes();
         }
-    }
+    });
 }
-function frenarCohete() {
+function frenarCohete(evt) {
+    var optionSelected = evt.dataset.codigo;
     var valorFrenar = 10;
-    var optionSelected = document.getElementById("selectorCohete").value;
-    for (var i = 0; i < cohete.length; i++) {
-        if (cohete[i].codigo == optionSelected) {
-            cohete[i].frenarCohete(valorFrenar);
+    cohete.forEach(function (element) {
+        if (element.codigo == optionSelected) {
+            element.frenarCohete(valorFrenar);
             cargarCohetes();
         }
-    }
+    });
 }
-function generateInputsDriveForm(numberForm, changeContent) {
+function pintarPropulsorModal(id_Propulsor, changeContent) {
+    var propulsor = "<H6 class=\"mt-3\">Propulsor " + id_Propulsor + "</H6>\n    <div class=\"btn-group btn-group-toggle from_drive\" data-toggle=\"buttons\">\n    <div class=\"input-group-prepend\">\n        <span class=\"input-group-text\" id=\"basic-addon1\">Potencia M\u00E1xima</span>\n    </div>";
+    var boton_cerrar = "<button type=\"button\" class=\"close ml-3\" aria-label=\"Close\" onclick=\"borrarPropulsorModal(" + id_Propulsor + ")\">\n        <span aria-hidden=\"true\">&times;</span>\n    </button>";
+    return propulsor + generarInputsPropulsor(id_Propulsor, changeContent) + boton_cerrar;
+}
+function generarInputsPropulsor(id_Propulsor, changeContent) {
     var inputsForm = "";
-    for (var i = 10; i <= 100; i += 10) {
-        if (changeContent === true && arrayFormsDrive[numberForm].powerSelected == i) {
-            inputsForm += "\n            <label class=\"btn btn-outline-primary active\">\n            <input type=\"radio\" name=\"potencia" + numberForm + "\" value=\"" + i + "\" autocomplete=\"off\" checked>" + i + "\n            </label>\n            ";
+    for (var i = 0; i <= 100; i += 10) {
+        if (changeContent === true && arrayPropulsores[id_Propulsor].potenciaSeleccionada == i) {
+            inputsForm += "\n            <label class=\"btn btn-outline-primary active\">\n            <input type=\"radio\" name=\"propulsor" + id_Propulsor + "\" value=\"" + i + "\" autocomplete=\"off\" checked>" + i + "\n            </label>\n            ";
         }
-        else if (changeContent === false && i == 10) {
-            inputsForm += "\n            <label class=\"btn btn-outline-primary active\">\n            <input type=\"radio\" name=\"potencia" + numberForm + "\" value=\"" + i + "\" autocomplete=\"off\" checked>" + i + "\n            </label>\n            ";
+        else if (changeContent === false && i == 0) {
+            inputsForm += "\n            <label class=\"btn btn-outline-primary active\">\n            <input type=\"radio\" name=\"propulsor" + id_Propulsor + "\" value=\"" + i + "\" autocomplete=\"off\" checked>" + i + "\n            </label>\n            ";
         }
         else {
-            inputsForm += "\n            <label class=\"btn btn-outline-primary\">\n            <input type=\"radio\" name=\"potencia" + numberForm + "\" value=\"" + i + "\" autocomplete=\"off\">" + i + "\n            </label>\n            ";
+            inputsForm += "\n            <label class=\"btn btn-outline-primary\">\n            <input type=\"radio\" name=\"propulsor" + id_Propulsor + "\" value=\"" + i + "\" autocomplete=\"off\">" + i + "\n            </label>\n            ";
         }
     }
     return inputsForm;
 }
-function generateContentFormDrive(numberForm, changeContent) {
-    var headerForm = "\n    <H6>Propulsor " + numberForm + "</H6>\n    <div class=\"btn-group btn-group-toggle from_drive\" data-toggle=\"buttons\">\n    <div class=\"input-group-prepend\">\n        <span class=\"input-group-text\" id=\"basic-addon1\">Pot\u00E8ncia M\u00E0xima</span>\n    </div>";
-    var footerForm = "\n    </div>\n    <a id=\"delete_drive\" onclick=\"deleteFormDrive(" + numberForm + ")\"><i class=\"fas fa-times-circle\"></i></a>\n    </div>\n    ";
-    return headerForm + generateInputsDriveForm(numberForm, changeContent) + footerForm;
-}
-function cargarListaPropulsores() {
-    var listFormsDrive = document.getElementById("lista_propulsores_modal");
-    while (listFormsDrive.firstChild) {
-        listFormsDrive.removeChild(listFormsDrive.firstChild);
-    }
-    for (var i = 0; i < arrayPropulsores.length; i++) {
-        var nodeLi = document.createElement("li");
-        nodeLi.id = "form_drive_" + arrayPropulsores[i].id_propulsor;
-        nodeLi.className = "group_drive_cross";
-        nodeLi.innerHTML = arrayPropulsores[i].contenido;
-        listFormsDrive.appendChild(nodeLi);
-    }
-}
-function addRocket() {
-    cargarCohetes();
-    arrayPropulsores = [];
-    nuevoCohete();
+function agregarPropulsor() {
+    nuevoCoheteModal();
     $('#cohete_nuevo').modal('hide');
+    arrayPropulsores = [];
     nuevoPropulsorModal();
     cargarListaPropulsores();
-    agregarCoheteAlSelector();
+    cargarCohetes();
 }
-/// Modal. Rockets Creation.
-//////////////////
-var arrayPropulsores = [];
-function nuevoCohete() {
-    var nuevoIdCohete = document.getElementById("id_rocket").value;
+function nuevoCoheteModal() {
+    var nuevoIdCohete = document.querySelector("#id_cohete").value;
     cohete.push(new Cohete(nuevoIdCohete));
     for (var i = 0; i < arrayPropulsores.length; i++) {
-        var maxPowerDrive = document.querySelector("input[name=\"potencia" + i + "\"]:checked").value;
-        cohete[cohete.length - 1].addDrive("P" + i + "_" + cohete[cohete.length - 1].id, maxPowerDrive);
+        var maximaVelocidad = document.querySelector("input[name=\"propulsor" + i + "\"]:checked").value;
+        cohete[cohete.length - 1].agregarPropulsor("P" + i + "_" + cohete[cohete.length - 1].codigo, "" + maximaVelocidad);
     }
 }
 function nuevoPropulsorModal() {
-    arrayPropulsores.push(new AddPropulsores(arrayPropulsores.length, generateContentFormDrive(arrayPropulsores.length, false)));
+    if (arrayPropulsores.length <= 2) {
+        arrayPropulsores.push(new AddPropulsores(arrayPropulsores.length, pintarPropulsorModal(arrayPropulsores.length, false)));
+        cargarListaPropulsores();
+    }
+    else {
+        document.querySelector("#msg_propulsores").innerHTML = "No puedes agregar más de 3 propulsores.";
+    }
+}
+function borrarPropulsorModal(id_propulsor) {
+    for (var i = 0; i < arrayPropulsores.length; i++) {
+        var potenciaSeleccionada = document.querySelector("input[name=propulsor" + i + "]:checked").value;
+        arrayPropulsores[i].potenciaSeleccionada = potenciaSeleccionada;
+    }
+    arrayPropulsores.splice(id_propulsor, 1);
+    for (var i = 0; i < arrayPropulsores.length; i++) {
+        arrayPropulsores[i].id_propulsor = i;
+        arrayPropulsores[i].contenido = pintarPropulsorModal(i, true);
+    }
     cargarListaPropulsores();
 }
-function borrarPropulsorModal(idForm) {
-    for (var i = 0; i < arrayPropulsores.length; i++) {
-        var powerSelected = document.querySelector("input[name=potencia" + i + "]:checked").value;
-        arrayPropulsores[i].powerSelected = powerSelected;
+function cargarListaPropulsores() {
+    var propulsores_modal = document.getElementById("lista_propulsores_modal");
+    while (propulsores_modal.firstChild) {
+        propulsores_modal.removeChild(propulsores_modal.firstChild);
     }
-    arrayPropulsores.splice(idForm, 1);
     for (var i = 0; i < arrayPropulsores.length; i++) {
-        arrayPropulsores[i].num = i;
-        arrayPropulsores[i].content = generateContentFormDrive(i, true);
+        var li_listaprop = document.createElement("li");
+        li_listaprop.id = "propulsor_modal_" + arrayPropulsores[i].id_propulsor;
+        li_listaprop.innerHTML = arrayPropulsores[i].contenido;
+        propulsores_modal.appendChild(li_listaprop);
     }
-    cargarListaPropulsores();
 }

@@ -19,19 +19,6 @@ class Cohete {
         }
     }
 
-    velocidadActual() {
-        let velocidad = 0;
-        for (let i = 0; i < this.propulsores.length; i++) {
-            velocidad += this.propulsores[i].velocidadActual;
-        }
-        return velocidad; 
-    }
-    
-    agregarPropulsor(codigoPropulsor: string, velocidadMaximaPropulsor: number) {
-        this.propulsores.push(new Propulsores(codigoPropulsor, velocidadMaximaPropulsor));
-        ++this.numeropropulsores;
-    }
-
     acelerarCohete(valor: number) {
         for (let i = 0; i < this.propulsores.length; i++) {
             if (this.propulsores[i].velocidadActual < this.propulsores[i].velocidadMaxima) {
@@ -50,5 +37,17 @@ class Cohete {
             }
         }
     }
-
+    
+    velocidadActual() {
+        let velocidad = 0;
+        for (let i = 0; i < this.propulsores.length; i++) {
+            velocidad += this.propulsores[i].velocidadActual;
+        }
+        return velocidad; 
+    }
+    
+    agregarPropulsor(codigoPropulsor: string, velocidadMaximaPropulsor: number) {
+        this.propulsores.push(new Propulsores(codigoPropulsor, velocidadMaximaPropulsor));
+        ++this.numeropropulsores;
+    }
 }
