@@ -93,12 +93,12 @@ function propulsor(id_Propulsor: number, changeContent: boolean) {
 
     for (let i = 0; i <= 100; i += 10) {
         if (changeContent === true && arrayPropulsores[id_Propulsor].potenciaSeleccionada == i) {
-            propulsor += `<label class="radio-inline mx-2 text-center"><input type="radio" name="propulsor${id_Propulsor}" value="${i}" checked>${i}</label>`;
+            propulsor += `<label class="radio-inline mx-2 text-center"><input type="radio" name="propulsor${id_Propulsor}" value="${i}" checked> ${i}</label>`;
         } 
         else if (changeContent === false && i == 0) {
-            propulsor += `<label class="radio-inline mx-2 text-center"><input type="radio" name="propulsor${id_Propulsor}" value="${i}" checked>${i}</label>`;
+            propulsor += `<label class="radio-inline mx-2 text-center"><input type="radio" name="propulsor${id_Propulsor}" value="${i}" checked> ${i}</label>`;
         } else {
-            propulsor += `<label class="radio-inline mx-2 text-center"><input type="radio" name="propulsor${id_Propulsor}" value="${i}">${i}</label>`;
+            propulsor += `<label class="radio-inline mx-2 text-center"><input type="radio" name="propulsor${id_Propulsor}" value="${i}"> ${i}</label>`;
         }
     }
     return propulsor;
@@ -132,11 +132,11 @@ function nuevoCoheteModal() {
 }
 
 function nuevoPropulsorModal() {
-    if(arrayPropulsores.length <= 2) {
+    if(arrayPropulsores.length <= 6) {
         arrayPropulsores.push(new AddPropulsores(arrayPropulsores.length, pintarPropulsorModal(arrayPropulsores.length, false)));
         cargarListaPropulsores();
     } else {
-        document.querySelector("#msg_propulsores").innerHTML = "No puedes agregar más de 3 propulsores."
+        document.querySelector("#msg_propulsores").innerHTML = `No puedes agregar más de ${arrayPropulsores.length} propulsores.`
     }
     
 }
