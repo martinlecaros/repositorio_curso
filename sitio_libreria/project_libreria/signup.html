@@ -1,0 +1,246 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/animate.css">
+    <!-- sheet  -->
+    <link rel="stylesheet" href="css/estilos_propios.css">
+    <title>O'Reilly Books Store</title>
+</head>
+
+<body>
+
+    <header class="site-header">
+        <nav class="topnav site-nav family-sans text-uppercase navbar navbar-expand-md bg-white navbar-light">
+
+            <div class="container-fluid">
+                <div class="logo col-md-3">
+                    <a href="index.html" class="navbar-brand"><img class="logo" src="assets/oreilly_logo_mark_red.svg" alt="O'Reilly"></a>
+                </div>
+
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#myTogglerNav" aria-controls="#myTogglerNav" aria-label="Toggle Navigation"><span class="navbar-toggler-icon"></span></button>
+
+                <div class="col-md-6">
+                    <div class="family-sans text-center p-2">
+                        <form id="busqueda" class="d-inline-flex" action="" method="" novalidate>
+                            <div class="form-row">
+                                <input id="input-buscador" type="text" class="form-control" minlength=3 placeholder="Search" required>
+                            </div>
+                            <button id="btnsearch" class="btn btn-primary ml-2" type="submit"><i class="fas fa-search text-white"></i></button>
+                        </form>
+                    </div>
+                </div>
+
+                <div class="col-md-3">
+                    <section class="collapse navbar-collapse ml-auto float-md-right" id="myTogglerNav">
+                        <a class="nav-item nav-link text-primary font-weight-normal" href="login.html">Log in</a>
+                        <a class="nav-item nav-link text-primary font-weight-normal" href="signup.html">Sign up</a>
+                    </section>
+                </div>
+            </div>
+            <!-- </div> container fluid end -->
+        </nav>
+        <div class="row container-fluid">
+            <h6 id="busquedaok" class="family-sans ml-auto mr-auto text-primary"></h6>
+        </div>
+    </header>
+
+
+    <!--Carrousell-->
+    <div class="bd-example">
+        <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
+            <ol class="carousel-indicators">
+                <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
+                <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
+
+            </ol>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="assets/banner1.jpg" class="d-block w-100" alt="Meet O’Reilly">
+                    <div class="carousel-caption">
+                        <h1>Meet O’Reilly</h1>
+                        <h4>Your partner in learning</h4>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="assets/banner2.jpg" class="d-block w-100" alt="Meet O’Reilly">
+                    <div class="carousel-caption">
+                        <h1>Meet O’Reilly</h1>
+                        <h4>Your partner in learning</h4>
+                    </div>
+                </div>
+
+            </div>
+            <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselExampleCaptions" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
+        </div>
+    </div>
+
+    <article class="contenido container-fluid mt-5">
+        <header class="contenido-header d-flex align-items-center text-center">
+            <div class="row ml-auto mr-auto">
+                <div class="col-12">
+                    <h3 class="title animated bounce">Sign up</h3>
+                    <p class="text">Get the best from us!</p>
+                </div>
+            </div>
+        </header>
+    </article>
+
+    <section class="container mb-5">
+        <form id="signup" class="needs-validation" novalidate>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="name-validate">Nombre</label>
+                        <input type="text" class="form-control" id="name-validate" placeholder="First name" minlength="3" required>
+                        <div class="invalid-feedback">Enter a minimum of 3 characters</div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="email-validate">Email address</label>
+                        <input type="email" class="form-control" id="email-validate" placeholder="Nunca compartiremos tu email!" pattern="^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,8}$" required>
+                        <div class="invalid-feedback">Please provide a valid email.</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="password">Contraseña</label>
+                        <input type="password" class="form-control" id="password1" placeholder="Must be 8-12 characters long." minlength="8" maxlength="12" required>
+                        <div class="invalid-feedback">Please provide a valid password.</div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="password-match">Comprobación Contraseña</label>
+                        <input type="password" class="form-control" id="password2" placeholder="Confirma tu contraseña" minlength="8" maxlength="12" required>
+                        <input id="showPasswordbnt" type="checkbox"> Show Password
+                        <div id="match" class="invalid-feedback">Please provide a valid password.</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="numero-validate">Teléfono</label>
+                        <input type="text" class="form-control" id="numero-validate" placeholder="Ingresa tu teléfono" pattern="^[0-9]{9}$" maxlength="9" required>
+                        <div class="invalid-feedback">Please provide a valid phone number.</div>
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="provincia">Provincia</label>
+                        <select class="custom-select" id="provincia" required>
+                                <option value=''>Seleccionar provincia</option>
+                                <option value='alava'>Álava</option>
+                                <option value='albacete'>Albacete</option>
+                                <option value='alicante'>Alicante/Alacant</option>
+                                <option value='almeria'>Almería</option>
+                                <option value='asturias'>Asturias</option>
+                                <option value='avila'>Ávila</option>
+                                <option value='badajoz'>Badajoz</option>
+                                <option value='barcelona'>Barcelona</option>
+                                <option value='burgos'>Burgos</option>
+                                <option value='caceres'>Cáceres</option>
+                                <option value='cadiz'>Cádiz</option>
+                                <option value='cantabria'>Cantabria</option>
+                                <option value='castellon'>Castellón/Castelló</option>
+                                <option value='ceuta'>Ceuta</option>
+                                <option value='ciudadreal'>Ciudad Real</option>
+                                <option value='cordoba'>Córdoba</option>
+                                <option value='cuenca'>Cuenca</option>
+                                <option value='girona'>Girona</option>
+                                <option value='laspalmas'>Las Palmas</option>
+                                <option value='granada'>Granada</option>
+                                <option value='guadalajara'>Guadalajara</option>
+                                <option value='guipuzcoa'>Guipúzcoa</option>
+                                <option value='huelva'>Huelva</option>
+                                <option value='huesca'>Huesca</option>
+                                <option value='illesbalears'>Illes Balears</option>
+                                <option value='jaen'>Jaén</option>
+                                <option value='acoruña'>A Coruña</option>
+                                <option value='larioja'>La Rioja</option>
+                                <option value='leon'>León</option>
+                                <option value='lleida'>Lleida</option>
+                                <option value='lugo'>Lugo</option>
+                                <option value='madrid'>Madrid</option>
+                                <option value='malaga'>Málaga</option>
+                                <option value='melilla'>Melilla</option>
+                                <option value='murcia'>Murcia</option>
+                                <option value='navarra'>Navarra</option>
+                                <option value='ourense'>Ourense</option>
+                                <option value='palencia'>Palencia</option>
+                                <option value='pontevedra'>Pontevedra</option>
+                                <option value='salamanca'>Salamanca</option>
+                                <option value='segovia'>Segovia</option>
+                                <option value='sevilla'>Sevilla</option>
+                                <option value='soria'>Soria</option>
+                                <option value='tarragona'>Tarragona</option>
+                                <option value='santacruztenerife'>Santa Cruz de Tenerife</option>
+                                <option value='teruel'>Teruel</option>
+                                <option value='toledo'>Toledo</option>
+                                <option value='valencia'>Valencia/Valéncia</option>
+                                <option value='valladolid'>Valladolid</option>
+                                <option value='vizcaya'>Vizcaya</option>
+                                <option value='zamora'>Zamora</option>
+                                <option value='zaragoza'>Zaragoza</option>
+                            </select>
+                        <div class="invalid-feedback">Please choose one.</div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="row">
+                <div class="col-3 text-right ml-auto">
+                    <button class="btn btn-primary" type="submit">Sign in</button>
+                </div>
+            </div>
+
+        </form>
+    </section>
+
+
+    <footer class="site-footer bg-secondary d-flex justify-content-center mt-5">
+        <section class="layout-footer py-2">
+            <p class="text-light py-3 px-5">©2019, O'Reilly Media, Inc. • (800) 889-8969 or (707) 827-7019 • Monday-Friday 7:30am-5pm PT • All trademarks and registered trademarks appearing on oreilly.com are the property of their respective owners. • <a class="text-light" href="mailto:confreg@oreilly.com"
+                    target="_blank">confreg@oreilly.com</a>
+            </p>
+
+            <div class="text-left px-5 mb-5">
+                <a class="text-light px-2" href="#">
+                    <i class="layout-icon fab fa-twitter"></i>
+                </a>
+                <a class="text-light px-2" href="#">
+                    <i class="layout-icon fab fa-linkedin"></i>
+                </a>
+                <a class="text-light px-2" href="#">
+                    <i class="layout-icon fab fa-github"></i>
+                </a>
+            </div>
+
+        </section>
+    </footer>
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/fontawesome-all.min.js"></script>
+    <script src="js/validaciones.js"></script>
+</body>
+
+</html>

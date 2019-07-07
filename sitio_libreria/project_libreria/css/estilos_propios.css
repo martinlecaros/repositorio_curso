@@ -1,0 +1,83 @@
+@import url("https://fonts.googleapis.com/css?family=Merriweather:300,300i,400,400i,700,700i,900,900i|Source+Sans+Pro:200,200i,300,300i,400,400i,600,600i,700,700i,900,900i");
+:root {
+    /* OVERRIDE VARIABLES*/
+    --font-family-sans-serif: "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    --gray-dark: #414449;
+    --purple: #533777;
+    /* PAGE NEW VARIABLES*/
+    --light-blue: #e1f7f5;
+    --font-family-serif: Merriweather, serif;
+    --color-text: var(--gray-dark);
+    --font-family-text: var(--font-family-serif);
+    --primary: #007bff;
+}
+
+.family-sans {
+    font-family: var(--font-family-sans-serif);
+}
+
+
+/* VARIABLES */
+
+body {
+    font-family: var(--font-family-text);
+    color: var(--color-text);
+    font-weight: 200;
+}
+
+.site-header .nav-item.nav-link:hover {
+    text-decoration: underline;
+}
+
+.site-header .navbar-toggler:focus {
+    outline: none !important;
+}
+
+.nav-item.nav-link {
+    min-width: 70px;
+}
+
+.search button {
+    margin-left: 10px;
+    background: var(--primary);
+}
+
+.contenido .img-thumbnail {
+    max-width: 170px;
+    margin: 20px;
+}
+
+.contenido .contenido-header {
+    min-height: 30vh;
+}
+
+.contenido .title {
+    font-size: 3em;
+    font-family: var(--font-family-sans-serif);
+    font-weight: 200;
+    color: var(--primary);
+}
+
+.contenido .text {
+    font-size: 1.2em;
+}
+
+.layout-footer .layout-icon {
+    font-size: 2em;
+}
+
+.logo {
+    width: 170px;
+}
+
+#input-buscador {
+    width: 300px;
+}
+
+@media (min-width: 768px) {
+    .carousel-caption {
+        bottom: 120px;
+        left: 15%;
+        text-align: left;
+    }
+}

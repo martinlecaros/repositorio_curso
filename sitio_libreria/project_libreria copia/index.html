@@ -1,0 +1,326 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="cleartype" content="on">
+    <meta name="MobileOptimized" content="320">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/animate.css">
+    <!-- sheet  -->
+    <link rel="stylesheet" href="css/estilos_propios.css">
+    <link rel="stylesheet" href="animate/style_animate.css">
+    <title>O'Reilly Books Store</title>
+</head>
+
+<body>
+
+    <div class="cd-overlay-nav">
+        <span></span>
+    </div>
+    <!-- cd-overlay-nav -->
+
+    <div class="cd-overlay-content">
+        <span></span>
+    </div>
+
+    <a href="#0" class="cd-nav-trigger"><span class="cd-icon"></span></a>
+
+
+    <nav>
+        <div class="cd-primary-nav">
+            <form id="login" class="col-md-8 mr-auto ml-auto" novalidate>
+                <h3 class="mb-3">Log in</h3>
+                <label for="inputEmail" class="sr-only">Email address</label>
+                <input class="form-control mb-1" type="email" id="inputEmail" placeholder="Email" required>
+                <p id="feedback-email" class="mb-3"></p>
+                <label for="inputPassword" class="sr-only">Password</label>
+                <input class="form-control mb-1" type="password" id="inputPassword" placeholder="Password" required>
+                <p id="feedback-password" class="mb-3"></p>
+                <button id="btnlogin" class="btn btn-primary" type="submit">Log in</button>
+            </form>
+            <h1 id="feedback-ok" class="col-md-8 text-center text-primary"></h1>
+        </div>
+    </nav>
+
+
+
+    <main class="cd-content">
+        <header class="site-header">
+
+            <nav class="topnav site-nav family-sans text-uppercase navbar navbar-expand-md bg-white navbar-light">
+
+                <div class="container-fluid">
+
+                    <div class="logo col-md-3 ml-2">
+                        <a href="index.html" class="navbar-brand"><img class="logo" src="assets/oreilly_logo_mark_red.svg" alt="O'Reilly"></a>
+
+                        <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#myTogglerNav" aria-controls="#myTogglerNav" aria-label="Toggle Navigation"><span class="navbar-toggler-icon"></span></button>
+                    </div>
+
+                    <div class="col-md-7">
+                        <div class="d-flex family-sans text-left p-2">
+                            <form id="busqueda" class="search d-inline-flex" action="" method="" novalidate>
+                                <div class="form-row">
+                                    <input id="input-buscador" type="text" class="form-control" minlength=3 placeholder="Search" required>
+                                </div>
+                                <button id="btnsearch" class="btn btn-primary" type="submit"><i class="fas fa-search text-white"></i></button>
+                            </form>
+
+                        </div>
+                        <p id="busquedaok" class="text-lowercase text-success"></p>
+                    </div>
+
+
+                    <div class="col-md-2">
+                        <section class="collapse navbar-collapse" id="myTogglerNav">
+                            <a class="nav-item nav-link text-primary" href="signup.html">Sign up</a>
+                        </section>
+                    </div>
+                </div>
+
+
+                </div>
+                <!-- </div> container fluid end -->
+            </nav>
+        </header>
+
+
+        <!--Carrousell-->
+        <div class="bd-example">
+            <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
+                <ol class="carousel-indicators">
+                    <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
+                    <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
+
+                </ol>
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="assets/banner1.jpg" class="d-block w-100" alt="Meet O’Reilly">
+                        <div class="carousel-caption">
+                            <h1>Meet O’Reilly</h1>
+                            <h4>Your partner in learning</h4>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="assets/banner2.jpg" class="d-block w-100" alt="Meet O’Reilly">
+                        <div class="carousel-caption">
+                            <h1>Meet O’Reilly</h1>
+                            <h4>Your partner in learning</h4>
+                        </div>
+                    </div>
+
+                </div>
+                <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#carouselExampleCaptions" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                </a>
+            </div>
+        </div>
+
+        <!-- Load content  -->
+        <article class="contenido container-fluid">
+            <header class="contenido-header d-flex align-items-center text-center my-5">
+                <div class="row justify-content-center">
+                    <div class="col-11 col-sm-10 col-md-8">
+                        <h3 class="title animated bounce">Looking for a certain book or video?</h3>
+                        <p class="text">Get all of them with an O’Reilly online book store. Whether you want to improve your skills or just need a quick solution to a pressing problem, you’ll be able to find what you need with O’Reilly online store.</p>
+                    </div>
+                </div>
+            </header>
+
+            <section class="d-flex align-items-center text-center justify-content-around">
+                <div class="container row">
+
+                    <article class="col-6 col-lg-3 p-3">
+                        <div class="card">
+                            <img class="card-img-top img-fluid" src="assets/lg/lrg-1.jpg" alt="o'reilly">
+                            <div class="card-body">
+                                <h4 class="card-title text-center">The Site Reliability Workbook</h4>
+                                <p class="card-subtitle font-weight-light text-center">O'Reilly</p>
+                                <div class="card-text text-right my-2 ">19,95€</div>
+                                <a href="#" class="btn btn-block  btn-primary mt-2"><i class="fas fa-shopping-cart pr-1"></i>AÑADIR</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="col-6 col-lg-3 p-3">
+                        <div class="card">
+                            <img class="card-img-top img-fluid" src="assets/lg/lrg-2.jpg" alt="o'reilly">
+                            <div class="card-body">
+                                <h4 class="card-title text-center">Deep Learning Cookbook</h4>
+                                <p class="card-subtitle font-weight-light text-center">O'Reilly</p>
+                                <div class="card-text text-right my-2 ">19,95€</div>
+                                <a href="#" class="btn btn-block  btn-primary mt-2"><i class="fas fa-shopping-cart pr-1"></i>AÑADIR</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="col-6 col-lg-3 p-3">
+                        <div class="card">
+                            <img class="card-img-top img-fluid" src="assets/lg/lrg-3.jpg" alt="o'reilly">
+                            <div class="card-body">
+                                <h4 class="card-title text-center">Deploying to OpenShift</h4>
+                                <p class="card-subtitle font-weight-light text-center">O'Reilly</p>
+                                <div class="card-text text-right my-2 ">19,95€</div>
+                                <a href="#" class="btn btn-block  btn-primary mt-2"><i class="fas fa-shopping-cart pr-1"></i>AÑADIR</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="col-6 col-lg-3 p-3">
+                        <div class="card">
+                            <img class="card-img-top img-fluid" src="assets/lg/lrg-4.jpg" alt="o'reilly">
+                            <div class="card-body">
+                                <h4 class="card-title text-center">Practical Tableau</h4>
+                                <p class="card-subtitle font-weight-light text-center">O'Reilly</p>
+                                <div class="card-text text-right my-2 ">19,95€</div>
+                                <a href="#" class="btn btn-block  btn-primary mt-2"><i class="fas fa-shopping-cart pr-1"></i>AÑADIR</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="col-6 col-lg-3 p-3">
+                        <div class="card">
+                            <img class="card-img-top img-fluid" src="assets/lg/lrg-5.jpg" alt="o'reilly">
+                            <div class="card-body">
+                                <h4 class="card-title text-center">Learning Kali Linux</h4>
+                                <p class="card-subtitle font-weight-light text-center">O'Reilly</p>
+                                <div class="card-text text-right my-2 ">19,95€</div>
+                                <a href="#" class="btn btn-block  btn-primary mt-2"><i class="fas fa-shopping-cart pr-1"></i>AÑADIR</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="col-6 col-lg-3 p-3">
+                        <div class="card">
+                            <img class="card-img-top img-fluid" src="assets/lg/lrg-6.jpg" alt="o'reilly">
+                            <div class="card-body">
+                                <h4 class="card-title text-center">Feature Engineering for Machine Learning</h4>
+                                <p class="card-subtitle font-weight-light text-center">O'Reilly</p>
+                                <div class="card-text text-right my-2 ">19,95€</div>
+                                <a href="#" class="btn btn-block  btn-primary mt-2"><i class="fas fa-shopping-cart pr-1"></i>AÑADIR</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="col-6 col-lg-3 p-3">
+                        <div class="card">
+                            <img class="card-img-top img-fluid" src="assets/lg/lrg-7.jpg" alt="o'reilly">
+                            <div class="card-body">
+                                <h4 class="card-title text-center">Learning Swift</h4>
+                                <p class="card-subtitle font-weight-light text-center">O'Reilly</p>
+                                <div class="card-text text-right my-2 ">19,95€</div>
+                                <a href="#" class="btn btn-block  btn-primary mt-2"><i class="fas fa-shopping-cart pr-1"></i>AÑADIR</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="col-6 col-lg-3 p-3">
+                        <div class="card">
+                            <img class="card-img-top img-fluid" src="assets/lg/lrg-8.jpg" alt="o'reilly">
+                            <div class="card-body">
+                                <h4 class="card-title text-center">Architecting Modern Data Platform</h4>
+                                <p class="card-subtitle font-weight-light text-center">O'Reilly</p>
+                                <div class="card-text text-right my-2 ">19,95€</div>
+                                <a href="#" class="btn btn-block  btn-primary mt-2"><i class="fas fa-shopping-cart pr-1"></i>AÑADIR</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="col-6 col-lg-3 p-3">
+                        <div class="card">
+                            <img class="card-img-top img-fluid" src="assets/lg/lrg-9.jpg" alt="o'reilly">
+                            <div class="card-body">
+                                <h4 class="card-title text-center">Designing Across Senses</h4>
+                                <p class="card-subtitle font-weight-light text-center">O'Reilly</p>
+                                <div class="card-text text-right my-2 ">19,95€</div>
+                                <a href="#" class="btn btn-block  btn-primary mt-2"><i class="fas fa-shopping-cart pr-1"></i>AÑADIR</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="col-6 col-lg-3 p-3">
+                        <div class="card">
+                            <img class="card-img-top img-fluid" src="assets/lg/lrg-10.jpg" alt="o'reilly">
+                            <div class="card-body">
+                                <h4 class="card-title text-center">Web Scraping with Python</h4>
+                                <p class="card-subtitle font-weight-light text-center">O'Reilly</p>
+                                <div class="card-text text-right my-2 ">19,95€</div>
+                                <a href="#" class="btn btn-block  btn-primary mt-2"><i class="fas fa-shopping-cart pr-1"></i>AÑADIR</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="col-6 col-lg-3 p-3">
+                        <div class="card">
+                            <img class="card-img-top img-fluid" src="assets/lg/lrg-11.jpg" alt="o'reilly">
+                            <div class="card-body">
+                                <h4 class="card-title text-center">Seven Databases in Seven Weeks</h4>
+                                <p class="card-subtitle font-weight-light text-center">O'Reilly</p>
+                                <div class="card-text text-right my-2 ">19,95€</div>
+                                <a href="#" class="btn btn-block  btn-primary mt-2"><i class="fas fa-shopping-cart pr-1"></i>AÑADIR</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="col-6 col-lg-3 p-3">
+                        <div class="card">
+                            <img class="card-img-top img-fluid" src="assets/lg/lrg-12.jpg" alt="o'reilly">
+                            <div class="card-body">
+                                <h4 class="card-title text-center">Jenkins 2 Up & Running</h4>
+                                <p class="card-subtitle font-weight-light text-center">O'Reilly</p>
+                                <div class="card-text text-right my-2 ">19,95€</div>
+                                <a href="#" class="btn btn-block  btn-primary mt-2"><i class="fas fa-shopping-cart pr-1"></i>AÑADIR</a>
+                            </div>
+                        </div>
+                    </article>
+
+
+                    <!-- </div> -->
+                </div>
+            </section>
+        </article>
+
+
+        <footer class="site-footer bg-secondary d-flex justify-content-center mt-5">
+            <section class="layout-footer py-2">
+                <p class="text-light py-3 px-5">©2019, O'Reilly Media, Inc. • (800) 889-8969 or (707) 827-7019 • Monday-Friday 7:30am-5pm PT • All trademarks and registered trademarks appearing on oreilly.com are the property of their respective owners. • <a class="text-light" href="mailto:confreg@oreilly.com"
+                        target="_blank">confreg@oreilly.com</a>
+                </p>
+
+                <div class="text-left px-5 mb-5">
+                    <a class="text-light px-2" href="#">
+                        <i class="layout-icon fab fa-twitter"></i>
+                    </a>
+                    <a class="text-light px-2" href="#">
+                        <i class="layout-icon fab fa-linkedin"></i>
+                    </a>
+                    <a class="text-light px-2" href="#">
+                        <i class="layout-icon fab fa-github"></i>
+                    </a>
+                </div>
+
+            </section>
+        </footer>
+    </main>
+    <!-- cd-content -->
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/fontawesome-all.min.js"></script>
+    <script src="animate/main.js"></script>
+    <script src="animate/modernizr.js"></script>
+    <script src="animate/velocity.min.js"></script>
+    <script src="js/validaciones.js"></script>
+</body>
+
+</html>
